@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>İzleme Listem</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="text-white">
+  <!-- Giriş butonu -->
+  <div class="text-end pe-5">
+    <button class="btn btn-success btn-lg rounded mt-4">Giriş Yap</button>
+  </div>
+
+  <!-- arka plan videosu -->
+  <div class="position-fixed top-0 start-0 w-100 h-100" style="z-index: -1; overflow: hidden;">
+    <video autoplay muted loop playsinline class="w-100 h-100" style="object-fit: cover;">
+      <source src="FatihSultanMehmed.mp4" type="video/mp4">
+      Tarayıcınız video etiketini desteklemiyor.
+    </video>
+  </div>
+
+  <div class="container mt-5">
+    <h1 class="text-center mb-4"><i class="bi bi-tv"></i> Benim Film & Dizi Takip Listem</h1>
+
+    <!-- Form ve Arama/Tema Butonları Satırı -->
+    <div class="row mb-4">
+      <!-- Form Sol Tarafta -->
+      <div class="col-md-6">
+        <form id="item-form">
+          <input type="text" id="title" class="form-control mb-2" placeholder="Film / Dizi Adı" required>
+          <input type="text" id="poster-url" class="form-control mb-2" placeholder="Afiş URL'si" required>
+          <input type="text" id="genre" class="form-control mb-2" placeholder="Tür" required>
+          <input type="date" id="date" class="form-control mb-2">
+          <select id="status" class="form-select mb-2">
+            <option value="İzlenecek">İzlenecek</option>
+            <option value="İzlendi">İzlendi</option>
+          </select>
+          <textarea id="note" class="form-control mb-2" placeholder="Not"></textarea>
+          <input type="number" id="rating" class="form-control mb-3" placeholder="Puan (1-5)" min="1" max="5">
+          <button type="submit" class="btn btn-success w-100">Listeye Ekle</button>
+        </form>
+      </div>
+
+      <!-- Arama ve Temizle Sağ Tarafta -->
+      <div class="col-md-6 d-flex flex-column justify-content-start">
+        <div class="d-flex mb-2">
+          <input type="text" id="search" class="form-control me-2" placeholder="Ara...">
+          <button class="btn btn-outline-danger" id="clear-all">Tümünü Temizle</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kart Liste Alanı -->
+    <div class="row" id="item-list">
+      <!-- Kartlar JavaScript ile buraya eklenecek -->
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
